@@ -27,13 +27,11 @@ MediaPlayer.prototype.togglePlay = function () {
   }
 };
 
-MediaPlayer.prototype.mute = function () {
-  this.media.muted = true;
-};
-
-MediaPlayer.prototype.unmute = function () {
-  this.media.muted = false;
-};
+MediaPlayer.prototype.toggleMute = function () {
+  this.media.muted ?
+    this.media.muted = false :
+    this.media.muted = true
+}
 
 const video = document.querySelector('video');
 const player = new MediaPlayer({
